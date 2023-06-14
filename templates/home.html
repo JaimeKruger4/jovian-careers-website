@@ -2,48 +2,26 @@
 <html>
 
 <head>
-    <title>Jovian Careers</title>
+    <title>TechTalent Careers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <style>
-        h1 {
-            font-size: 80px;
-            font-family: Roboto;
-            font-weight: normal;
-            color: rgb(50,50,50);
-            text-align: centre;
-        }
-
         #banner {
-            width: 100%
-            height: 360px;
-            object-fit: cover;
-        }
-        h2 {
-            font-size: 32px;
-            font-family: Roboto;
-            font-weight: normal;
-            color: rgb(100,100,100);
-            text-align: centre;
-        }
-
-        .body-text {
-            font-family: Roboto;
-            font-weight: normal;
-            color: rgb(80,80,80);
-        }
-
-        #container {
-            max-width: 720px;
-            margin: 0 auto 0 auto;
-        }
+        height: 360px;
+        width: 100%;
+        object-fit:cover;
+        margin-bottom: 16px;
+      }
     </style>
 </head>
 
 <body>
-    <div>
-        <h1>Jovian Careers</h1>
-        <img id="banner" src = "banner.jpg">
-        <h2>About Jovian</h2>
-        <p class="body-text">
+    <div class = "container">
+        <h1 class = "text-centre mt-2 mb-4">TechTalent Careers</h1>
+        <img class = "img-fluid" id="banner" src = "static/banner.jpeg">
+        <h2 class = "text-centre mt-2 mb-4">About TechTalent</h2>
+        <p class="lead">
             Welcome to TechTalent Solutions - Your Premier IT Recruitment Partner!
 
             At TechTalent Solutions, we specialize in connecting exceptional tech
@@ -59,12 +37,16 @@
             right candidates who possess the skills, experience, and cultural fit that aligns with your
             organization's goals and values.
         </p>
-        <h2>Open Positions</h2>
-        <p class="body-text">TODO- show jobs here</p>
+        <h2 class = "text-centre mt-2 mb-4">Open Positions</h2>
+        <p>
+            {%for job in jobs%}
+                {%include 'jobs.html'%}
+            {%endfor%}
+        </p>
 
-        <div style = "text-align:centre;">
-            <button>Contact Us</button>
-            <p>Copyright 2023, Jovian</p>
+        <div class="text-centre">
+            <button class ="btn btn-primary btn-lg" >Contact Us</button>
+            <p>Copyright 2023, TechTalent</p>
         </div>
     </div>
 
